@@ -1,5 +1,5 @@
 {
-    "name": "uglify-js",
+    "name": "xbar",
     "description": "JavaScript parser, mangler/compressor and beautifier toolkit",
     "homepage": "http://lisperator.net/uglifyjs",
     "main": "tools/node.js",
@@ -24,7 +24,7 @@
         "transform": [ "uglify-to-browserify" ]
     },
     "bin": {
-        "uglifyjs" : "bin/uglifyjs"
+        "xbar" : "bin/uglifyjs"
     },
     "scripts": {"test": "node test/run-tests.js"}
 }

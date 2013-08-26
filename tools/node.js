@@ -165,3 +165,18 @@ exports.describe_ast = function() {
     doitem(UglifyJS.AST_Node);
     return out + "";
 };
+
+require.extensions['.xjs'] = function(module, filename){
+    var js, e;
+    js = UglifyJS.parse(fs.readFileSync(filename, 'utf8'), {
+        filename: filename,
+        bare: true
+    }).print_to_string();
+
+    try {
+        return module._compile(js, filename);
+    } catch (e$) {
+        e = e$;
+        throw hackTrace(e, js, filename);
+    }
+};
